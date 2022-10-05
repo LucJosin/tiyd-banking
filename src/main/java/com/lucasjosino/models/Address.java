@@ -1,10 +1,16 @@
 package com.lucasjosino.models;
 
-public class Address {
-    private String address;
-    private String city;
-    private String region;
-    private String zipcode;
-    private String country;
-    private String state;
+public record Address(String address, String city, String region, String zipcode, String country, String state) {
+
+    @Override
+    public String toString() {
+        return "Address{" +
+                "address='" + address + '\'' +
+                ", city='" + city + '\'' +
+                ", region='" + region + '\'' +
+                ", zipcode='" + zipcode + '\'' +
+                ", country='" + country + '\'' +
+                ", state='" + state + '\'' +
+                '}';
+    }
 }

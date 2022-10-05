@@ -1,10 +1,12 @@
 package com.lucasjosino.interfaces;
 
+import com.lucasjosino.enums.AccountType;
 import com.lucasjosino.models.account.Account;
 
+import java.util.UUID;
+
 public interface BankActions {
-    void createAccount(Account newAccount);
-    void deleteAccount(Account newAccount);
-    void blockAccount(Account newAccount);
-    void getAccount(Account newAccount);
+    Account createAccount(String ownerName, AccountType type);
+    void deleteAccount(UUID uuid);
+    Account getAccount(UUID uuid);
 }
