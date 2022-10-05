@@ -17,6 +17,9 @@ public class Main {
         // Create banks and print all.
         setupBanks();
 
+        // Print ibis info.
+        printIBIS();
+
         // Create 'john' account.
         CurrentAccount john = (CurrentAccount) ibis.getBanks().get(0).createAccount(
                 "John Doe",
@@ -28,6 +31,8 @@ public class Main {
                 "Maria Doe",
                 AccountType.SAVINGS_ACCOUNT
         );
+
+        System.out.println("******** Actions ********");
 
         // Action 1
         john.deposit(2540);
@@ -73,6 +78,17 @@ public class Main {
         System.out.println("OwnerName: " + maria.getOwnerName());
     }
 
+    private static void printIBIS() {
+        System.out.println("******** IBIS ********");
+        System.out.println(ibis.getUuid());
+        System.out.println(ibis.getName());
+        System.out.println(ibis.getCode());
+        System.out.println(ibis.getAddress());
+        System.out.println(ibis.getContact());
+        System.out.println();
+        ibis.listBanks();
+    }
+
     private static void setupBanks() {
         Bank hooluyBank = new Bank(
                 "Hooluy Bank",
@@ -110,14 +126,5 @@ public class Main {
 
         ibis.addBank(hooluyBank);
         ibis.addBank(yayBank);
-
-        System.out.println("******** List of Banks ********");
-        for (Bank bank : ibis.getBanks()) {
-            System.out.println("Name: " + bank.getName());
-            System.out.println("Code: " + bank.getCode());
-            System.out.println(bank.getContact());
-            System.out.println(bank.getAddress());
-            System.out.println();
-        }
     }
 }

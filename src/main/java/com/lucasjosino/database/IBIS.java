@@ -17,6 +17,17 @@ public class IBIS extends Bank {
         return banks;
     }
 
+    public void listBanks() {
+        System.out.println("******** List of Banks ********");
+        for (Bank bank : banks) {
+            System.out.println("Name: " + bank.getName());
+            System.out.println("Code: " + bank.getCode());
+            System.out.println(bank.getContact());
+            System.out.println(bank.getAddress());
+            System.out.println();
+        }
+    }
+
     public Bank getBank(UUID uuid) {
         for (Bank bank : banks) {
             if (bank.getUuid() == uuid) return bank;
