@@ -33,6 +33,16 @@ public class Bank implements BankActions {
         this.address = address;
     }
 
+    public Bank(UUID uuid, String name, Contact contact, Address address) {
+        Random random = new Random();
+
+        this.uuid = uuid;
+        this.name = name;
+        this.code = random.nextInt(999);
+        this.contact = contact;
+        this.address = address;
+    }
+
     public UUID getUuid() {
         return uuid;
     }

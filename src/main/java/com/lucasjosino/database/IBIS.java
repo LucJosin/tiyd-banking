@@ -3,7 +3,6 @@ package com.lucasjosino.database;
 import com.lucasjosino.models.Address;
 import com.lucasjosino.models.Bank;
 import com.lucasjosino.models.Contact;
-import com.lucasjosino.models.account.Account;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +11,52 @@ import java.util.UUID;
 public class IBIS extends Bank {
 
     private final List<Bank> banks = new ArrayList<>();
+
+    public IBIS() {
+        System.out.println("******** IBIS ********");
+        System.out.println(getUuid());
+        System.out.println(getName());
+        System.out.println(getCode());
+        System.out.println(getAddress());
+        System.out.println(getContact());
+        System.out.println();
+
+        addBank(new Bank(
+                "Hooluy Bank",
+                new Contact(
+                        "74354791579",
+                        "https://hoolubank.com",
+                        "support@hoolubank.com"
+                ),
+                new Address(
+                        "8806 N 17th St",
+                        "Nooslurg",
+                        "Florindo",
+                        "48219",
+                        "Imaginary States",
+                        "Florindo"
+                )
+        ));
+
+        addBank(new Bank(
+                "Yay Bank",
+                new Contact(
+                        "97314572198",
+                        "https://yaybank.com",
+                        "support@yaybank.com"
+                ),
+                new Address(
+                        "8914 Lower Im Rt",
+                        "Zaambu",
+                        "Summer Render",
+                        "45893",
+                        "Imaginary States",
+                        "Summer Render"
+                )
+        ));
+
+        listBanks();
+    }
 
     public List<Bank> getBanks() {
         return banks;
